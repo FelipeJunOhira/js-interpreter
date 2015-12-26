@@ -6,35 +6,32 @@ var FalseExpression = require('./expression/false_expression');
 
 describe('Expressions', function() {
 
-  var behaveAsExpression = function(ExpressionLike) {
+  var behaveAsLiteralExpression = function(LiteralExpression, context) {
     it('can be instantiated', function() {
-      expect(new ExpressionLike()).to.be.instanceOf(ExpressionLike);
+      expect(new LiteralExpression()).to.be.instanceOf(LiteralExpression);
     });
 
     it('inherit from Expression', function() {
-      expect(new ExpressionLike()).to.be.instanceOf(Expression);
+      expect(new LiteralExpression()).to.be.instanceOf(Expression);
+    });
+
+    describe('.evaluate', function() {
+      it('returns ' + context.evaluateValue, function() {
+        var expression = new LiteralExpression();
+        expect(expression.evaluate()).to.be.equal(context.evaluateValue);
+      });
     });
   }
 
   describe('TrueExpression', function() {
-    behaveAsExpression(TrueExpression);
-
-    describe('.evaluate', function() {
-      it('returns true', function() {
-        var expression = new TrueExpression();
-        expect(expression.evaluate()).to.be.equal(true);
-      });
+    behaveAsLiteralExpression(TrueExpression, {
+      evaluateValue: true
     });
   });
 
   describe('FalseExpression', function() {
-    behaveAsExpression(FalseExpression);
-
-    describe('.evaluate', function() {
-      it('returns false', function() {
-        var expression = new FalseExpression();
-        expect(expression.evaluate()).to.be.equal(false);
-      });
+    behaveAsLiteralExpression(FalseExpression, {
+      evaluateValue: false
     });
   });
 });
