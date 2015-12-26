@@ -11,4 +11,11 @@ describe('TrueExpression', function() {
   it('inherit from Expression', function() {
     expect(new TrueExpression()).to.be.instanceOf(Expression);
   });
+
+  describe('.evaluate', function() {
+    it('returns true', function() {
+      var expression = new TrueExpression();
+      expect(expression.evaluate()).to.be.equal(true);
+    });
+  });
 });
