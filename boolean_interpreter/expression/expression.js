@@ -1,7 +1,6 @@
 module.exports = (function() {
 
-  function Expression() {
-  };
+  function Expression() {};
 
   Expression.prototype.evaluate = function() {
   };
