@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test:boolean",
-    "test:boolean": "npm run test:boolean:true_expression && npm run test:boolean:false_expression && npm run test:boolean:or_expression",
+    "test:boolean": "npm run test:boolean:true_expression && npm run test:boolean:false_expression && npm run test:boolean:or_expression && npm run test:boolean:and_expression",
     "test:boolean:true_expression": "mocha boolean_interpreter/tests/true_expression_test.js",
     "test:boolean:false_expression": "mocha boolean_interpreter/tests/false_expression_test.js",
     "test:boolean:or_expression": "mocha boolean_interpreter/tests/or_expression_test.js",
+    "test:boolean:and_expression": "mocha boolean_interpreter/tests/and_expression_test.js",
 
     "test:classes": "mocha js_class/test.js"
   },
