@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test:boolean",
-    "test:boolean": "mocha boolean_interpreter/test.js",
+    "test:boolean": "npm run test:boolean:true_expression && npm run test:boolean:false_expression",
+    "test:boolean:true_expression": "mocha boolean_interpreter/tests/true_expression_test.js",
+    "test:boolean:false_expression": "mocha boolean_interpreter/tests/false_expression_test.js",
+
     "test:classes": "mocha js_class/test.js"
   },
   "repository": {
