@@ -5,15 +5,18 @@ var TrueExpression = require('./expression/true_expression');
 var FalseExpression = require('./expression/false_expression');
 
 describe('Expressions', function() {
-
-  function behaveAsLiteralExpression(LiteralExpression, context) {
+  function behaveAsExpression(ExpressionLike) {
     it('can be instantiated', function() {
-      expect(new LiteralExpression()).to.be.instanceOf(LiteralExpression);
+      expect(new ExpressionLike()).to.be.instanceOf(ExpressionLike);
     });
 
     it('inherit from Expression', function() {
-      expect(new LiteralExpression()).to.be.instanceOf(Expression);
+      expect(new ExpressionLike()).to.be.instanceOf(Expression);
     });
+  }
+
+  function behaveAsLiteralExpression(LiteralExpression, context) {
+    behaveAsExpression(LiteralExpression);
 
     describe('.evaluate', function() {
       it('returns ' + context.evaluateValue, function() {
@@ -34,4 +37,6 @@ describe('Expressions', function() {
       evaluateValue: false
     });
   });
+
+
 });
