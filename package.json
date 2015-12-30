@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test:boolean",
-    "test:boolean": "mocha boolean_interpreter/test.js"
+    "test:boolean": "mocha boolean_interpreter/test.js",
+    "test:classes": "mocha js_class/test.js"
   },
   "repository": {
     "type": "git",
