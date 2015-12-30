@@ -6,7 +6,7 @@ var FalseExpression = require('./expression/false_expression');
 
 describe('Expressions', function() {
 
-  var behaveAsLiteralExpression = function(LiteralExpression, context) {
+  function behaveAsLiteralExpression(LiteralExpression, context) {
     it('can be instantiated', function() {
       expect(new LiteralExpression()).to.be.instanceOf(LiteralExpression);
     });
